@@ -1,0 +1,56 @@
+= GoogleAddressFinder - get real addresses from Google via the Google Maps web interface
+
+This package contains GoogleAddressFinder, a library for finding real addresses for things from Google via the Google Maps interface.  This can be used as a source of test data (e.g. a populator rake task) or any other case where finding street addresses for items is needed.
+
+== Download
+
+The latest copy can currently be pulled from the git repository on github.
+
+* http://github.com/mdoel/googleaddressfinder/tree/master
+
+or via
+
+  Note: gem stuff doesn't work yet
+
+  % sudo gem sources -a http://gems.github.com # (you only need to do this once)
+  % sudo gem install googleaddressfinder
+  
+== Usage
+
+The intializer for the GoogleAddressFinder class allows four parameters to be passed via an options hash:
+
+  :search_term - passed to Google as a source of addresses (default is "mcdonalds")
+  :locations - cities, zips, etc. to get addresses for (default is top 10 cities in U.S.)
+  :per_location - how many addresses to pull from Google for each location (default is 10)
+  :max_hits_per_location - how many times to hit Google looking for addresses (default is 2)
+
+The last parameter above is to prevent slamming Google looking for requests (see To Do below).
+
+
+  finder = GoogleAddressFinder.new
+  finder.load_addresses
+  a = finder.get_random_address     # will call load_addresses if needed
+  @all = finder.all_addresses       # returns all addresses loaded from Google
+  
+To use search for something other than mcdonalds in the default locations, instantiate like this:
+
+  finder = GoogleAddressFinder.new(:search_term => "church", :locations => ['43220','Cincinnati'])
+
+
+
+
+= Other Stuff
+
+Author:: Mike Doel <mike at mikedoel dot com>
+License:: Copyright 2009 by Mike Doel.
+          Released under an MIT-style license.  See the LICENSE file
+          included in the distribution.
+Bugs:: Report to author via e-mail
+GitHub:: http://github.com/mdoel/googleaddressfinder/tree/master
+
+== Warranty
+
+This software is provided "as is" and without any express or
+implied warranties, including, without limitation, the implied
+warranties of merchantibility and fitness for a particular
+purpose.

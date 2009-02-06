@@ -1,0 +1,7 @@
+Before Next Release:
+
+* Improve algorithm for getting addresses.  The current implementation uses the standard Google Maps web interface to get addresses.  This could likely be improved by using the official Google Maps API.
+
+* More intelligent limiting.  Instead of relying on :max_hits_per_location, the library should auto-limit based on Google results.
+
+* Allow loading addresses from cached file instead of going out to Google
