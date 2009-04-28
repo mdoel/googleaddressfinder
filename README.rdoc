@@ -10,7 +10,7 @@ The latest copy can currently be pulled from the git repository on github.
 
 or via
 
-  Note: gem stuff doesn't work yet
+  Note: gem stuff doesn't work yet.  Best bet it is to just copy to your app.
 
   % sudo gem sources -a http://gems.github.com # (you only need to do this once)
   % sudo gem install googleaddressfinder
