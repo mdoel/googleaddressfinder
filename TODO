@@ -1,4 +1,4 @@
-Before Next Release (if there is one - pretty unlikely):
+Before Next Release (if there is one - pretty unlikely I'd say):
 
 * Improve algorithm for getting addresses.  The current implementation uses the standard Google Maps web interface to get addresses.  This could likely be improved by using the official Google Maps API.
 
